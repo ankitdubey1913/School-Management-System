@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | EduManage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo" style="font-size: 1.25rem;">
+          <i class="fa-solid fa-graduation-cap"></i> EduManage
+        </a>
+      </div>
+      <div class="sidebar-nav">
+        <a href="#" class="sidebar-link active" onclick="showTab('dashboard')"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#" class="sidebar-link" onclick="showTab('attendance')"><i class="fa-solid fa-calendar-check"></i> Attendance</a>
+        <a href="#" class="sidebar-link" onclick="showTab('results')"><i class="fa-solid fa-file-contract"></i> Results</a>
+        <a href="#" class="sidebar-link" onclick="showTab('timetable')"><i class="fa-solid fa-clock"></i> Timetable</a>
+      </div>
+      <div style="padding: 1.5rem; border-top: 1px solid var(--border);">
+        <a href="login.html" class="sidebar-link" style="color: var(--danger);"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="topbar">
+        <h2>Student Dashboard</h2>
+        <div class="user-profile">
+          <button style="border:none;background:none;font-size:1.25rem;color:var(--text-light);cursor:pointer;">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+          <div class="avatar" id="userAvatar">S</div>
+          <div>
+            <div style="font-weight: 600;" id="userName">Student Name</div>
+            <div style="font-size: 0.75rem; color: var(--text-light);">Grade 10 - Section A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overview Cards -->
+      <div class="features-grid" style="margin-bottom: 2rem;">
+        <div class="card">
+          <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Overall Attendance</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--success);">85%</div>
+        </div>
+        <div class="card">
+          <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Current Rank</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">4th</div>
+        </div>
+        <div class="card">
+          <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Assignments Pending</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--warning);">2</div>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <!-- Chart -->
+        <div class="card" style="grid-column: span 2;">
+          <h3 style="margin-bottom: 1rem;">Performance Chart</h3>
+          <canvas id="performanceChart" height="100"></canvas>
+        </div>
+        <!-- Notifications -->
+        <div class="card">
+          <h3 style="margin-bottom: 1rem;">Recent Notifications</h3>
+          <ul style="display: flex; flex-direction: column; gap: 1rem;">
+            <li style="border-left: 3px solid var(--primary); padding-left: 1rem;">
+              <div style="font-weight: 500;">Math Test Tomorrow</div>
+              <div style="font-size: 0.75rem; color: var(--text-light);">2 hours ago</div>
+            </li>
+            <li style="border-left: 3px solid var(--warning); padding-left: 1rem;">
+              <div style="font-weight: 500;">Fee Due Reminder</div>
+              <div style="font-size: 0.75rem; color: var(--text-light);">1 day ago</div>
+            </li>
+            <li style="border-left: 3px solid var(--success); padding-left: 1rem;">
+              <div style="font-weight: 500;">Science Project Graded</div>
+              <div style="font-size: 0.75rem; color: var(--text-light);">3 days ago</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Recent Results Table -->
+      <div class="card" style="margin-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">Recent Results</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Exam</th>
+                <th>Marks</th>
+                <th>Grade</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mathematics</td>
+                <td>Mid-Term</td>
+                <td>88/100</td>
+                <td>A</td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+              <tr>
+                <td>Science</td>
+                <td>Mid-Term</td>
+                <td>92/100</td>
+                <td>A+</td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+              <tr>
+                <td>History</td>
+                <td>Mid-Term</td>
+                <td>74/100</td>
+                <td>B</td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Just a placeholder chart to make it look professional
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('performanceChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Term 1', 'Term 2', 'Mid-Term', 'Finals Preview'],
+          datasets: [{
+            label: 'Average Score',
+            data: [75, 82, 85, 88],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 100 }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

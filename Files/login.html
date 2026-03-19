@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | EduManage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: var(--secondary);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .auth-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .auth-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+    .role-tabs {
+      display: flex;
+      background: var(--bg-color);
+      border-radius: var(--radius);
+      padding: 0.25rem;
+      margin-bottom: 2rem;
+    }
+    .role-tab {
+      flex: 1;
+      padding: 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      border-radius: var(--radius);
+      font-weight: 500;
+      color: var(--text-light);
+      transition: all 0.2s;
+    }
+    .role-tab.active {
+      background: white;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fa-solid fa-graduation-cap"></i> EduManage
+    </a>
+    <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </nav>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2 style="margin-bottom: 0.5rem;">Welcome Back</h2>
+      <p style="color: var(--text-light); margin-bottom: 2rem;">Please log in to your account</p>
+      
+      <div class="role-tabs" id="roleTabs">
+        <div class="role-tab active" data-role="student">Student</div>
+        <div class="role-tab" data-role="teacher">Teacher</div>
+        <div class="role-tab" data-role="admin">Admin</div>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Email / ID</label>
+          <input type="text" id="username" class="form-control" placeholder="Enter your ID or Email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" value="demo123" required>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.875rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-block">Login</button>
+      </form>
+      
+      <p id="loginError" style="color: var(--danger); margin-top: 1rem; display: none; font-size: 0.875rem;">Invalid credentials. Try any email and 'demo123'.</p>
+      
+      <div style="margin-top: 2rem; font-size: 0.875rem; color: var(--text-light);">
+        <p>Demo Credentials:</p>
+        <p>Password is <strong>demo123</strong> for all roles.</p>
+        <p>Choose your role above and click Login to view the respective dashboard.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

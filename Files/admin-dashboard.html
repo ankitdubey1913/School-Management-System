@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | EduManage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo" style="font-size: 1.25rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Admin
+        </a>
+      </div>
+      <div class="sidebar-nav">
+        <a href="#" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-users"></i> Students</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-school"></i> Classes</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i> Fees</a>
+      </div>
+      <div style="padding: 1.5rem; border-top: 1px solid var(--border);">
+        <a href="login.html" class="sidebar-link" style="color: var(--danger);"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="topbar">
+        <h2>Admin Overview</h2>
+        <div class="user-profile">
+          <div class="avatar" style="background: var(--text-dark);">A</div>
+          <div>
+            <div style="font-weight: 600;">System Admin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="features-grid" style="margin-bottom: 2rem;">
+        <div class="card">
+          <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Total Students</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">1,245</div>
+        </div>
+        <div class="card">
+          <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Total Teachers</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--success);">84</div>
+        </div>
+        <div class="card">
+          <div style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.5rem;">Total Revenue (Year)</div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--warning);">$124,500</div>
+        </div>
+      </div>
+
+      <!-- Management Table -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 style="margin: 0;">Recent Registrations</h3>
+          <button class="btn">Add New User</button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Date Joined</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#10045</td>
+                <td>John Doe</td>
+                <td>Student</td>
+                <td>Mar 15, 2026</td>
+                <td><span class="badge badge-success">Active</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-pen"></i></button>
+                  <button class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; background: var(--danger);"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>#10046</td>
+                <td>Sarah Smith</td>
+                <td>Teacher</td>
+                <td>Mar 14, 2026</td>
+                <td><span class="badge badge-success">Active</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-pen"></i></button>
+                  <button class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; background: var(--danger);"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>#10047</td>
+                <td>Mike Johnson</td>
+                <td>Student</td>
+                <td>Mar 12, 2026</td>
+                <td><span class="badge badge-warning">Pending</span></td>
+                <td>
+                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-pen"></i></button>
+                  <button class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; background: var(--danger);"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

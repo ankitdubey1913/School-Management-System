@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard | EduManage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo" style="font-size: 1.25rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Teacher
+        </a>
+      </div>
+      <div class="sidebar-nav">
+        <a href="#" class="sidebar-link active"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-users"></i> My Classes</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-marker"></i> Attendance</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-book"></i> Assignments</a>
+      </div>
+      <div style="padding: 1.5rem; border-top: 1px solid var(--border);">
+        <a href="login.html" class="sidebar-link" style="color: var(--danger);"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="topbar">
+        <h2>Teacher Dashboard</h2>
+        <div class="user-profile">
+          <div class="avatar" style="background: var(--success);">T</div>
+          <div>
+            <div style="font-weight: 600;">Mr. Anderson</div>
+            <div style="font-size: 0.75rem; color: var(--text-light);">Mathematics Dept.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="features-grid" style="margin-bottom: 2rem;">
+        <div class="card" style="text-align: center; cursor: pointer;">
+          <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-clipboard-user"></i></div>
+          <h3 style="font-size: 1rem;">Mark Attendance</h3>
+        </div>
+        <div class="card" style="text-align: center; cursor: pointer;">
+          <div style="font-size: 2rem; color: var(--success); margin-bottom: 1rem;"><i class="fa-solid fa-file-arrow-up"></i></div>
+          <h3 style="font-size: 1rem;">Upload Marks</h3>
+        </div>
+        <div class="card" style="text-align: center; cursor: pointer;">
+          <div style="font-size: 2rem; color: var(--warning); margin-bottom: 1rem;"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3 style="font-size: 1rem;">Send Announcement</h3>
+        </div>
+      </div>
+
+      <!-- Upcoming Classes Table -->
+      <div class="card">
+        <h3 style="margin-bottom: 1rem;">Today's Classes</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Class</th>
+                <th>Subject</th>
+                <th>Room</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>09:00 AM</td>
+                <td>Grade 10 - A</td>
+                <td>Advanced Math</td>
+                <td>Room 102</td>
+                <td><span class="badge badge-success">Completed</span></td>
+              </tr>
+              <tr>
+                <td>11:30 AM</td>
+                <td>Grade 12 - Sci</td>
+                <td>Calculus</td>
+                <td>Room 205</td>
+                <td><span class="badge badge-warning">Ongoing</span></td>
+              </tr>
+              <tr>
+                <td>02:00 PM</td>
+                <td>Grade 9 - B</td>
+                <td>Algebra</td>
+                <td>Room 101</td>
+                <td><span class="badge" style="background: var(--secondary);">Upcoming</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
